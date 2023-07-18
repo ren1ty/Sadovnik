@@ -1,16 +1,22 @@
 using System;
-using Unity.VisualScripting;
+using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class Flower : MonoBehaviour
 {
-    public string FlowerName;
 
+    public string FlowerName;
     [Header("Plant stats")]
     [SerializeField] private int health;
     [SerializeField] private int PlantLevel;
 
 
+    public Flower(string Name)
+    {
+        this.FlowerName = Name;
+    }
+    
 
     /// <summary>
     /// Reduces the health of the plant, destroying it at zero health value
